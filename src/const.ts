@@ -10,7 +10,13 @@ export enum NameSpace {
 }
 
 export enum APIRoute {
-  Characters = '/people',
-  Character = '/people/:id',
+  Heroes = '/people',
+  HeroesByPage = '/people/?page=:id',
+  HeroById = '/people/:id',
   Schema = '/people/:id/schema',
+}
+
+export enum Pages {
+  Home = 'home',
+  Characters = 'characters',
 }

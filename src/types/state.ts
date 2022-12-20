@@ -1,15 +1,15 @@
 import { store } from '../store/';
-import { Characters } from './character';
+import { Heroes } from './hero';
 
 export type State = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
 
 export type CatalogData = {
-  characters: Characters;
+  heroes: Heroes;
   isDataLoaded: boolean;
 };
 
 export type CatalogSearch = {
-  charactersBySearch: Characters;
+  heroesBySearch: Heroes;
 };

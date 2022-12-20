@@ -4,7 +4,7 @@ import { NameSpace } from '../../const';
 import { CatalogSearch } from '../../types/state';
 
 const initialState: CatalogSearch = {
-  charactersBySearch: [],
+  heroesBySearch: [],
 };
 
 export const catalogSearch = createSlice({
@@ -12,10 +12,10 @@ export const catalogSearch = createSlice({
   initialState,
   reducers: {
     loadCharactersBySearch: (state, action) => {
-      state.charactersBySearch = action.payload;
+      state.heroesBySearch = action.payload;
     },
     resetCharactersBySearch: (state) => {
-      state.charactersBySearch = [];
+      state.heroesBySearch = [];
     },
   },
 });

@@ -1,4 +1,4 @@
-type Character = {
+type Hero = {
   birthYear: string,
   eyeColor: string,
   films: string[],
@@ -17,6 +17,6 @@ type Character = {
   vehicles: string[],
 }
 
-type Characters = Character[];
+type Heroes = Hero[];
 
-export type { Character, Characters };
+export type { Hero, Heroes };

@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
 
+import { Pages } from "../../const";
 import { AppRoute } from "../../const";
 import "./style.css";
 
 type HeaderProps = {
-  currentLink: string;
+  currentPage: string;
 };
 
-function Header({ currentLink }: HeaderProps): JSX.Element {
+function Header({ currentPage }: HeaderProps): JSX.Element {
   return (
     <header className="page-header">
       <nav className="page-nav nav">
         <ul className="nav__list">
           <li className="nav__item">
-            {currentLink === "Home" ? (
+            {currentPage === Pages.Home ? (
               <span className="nav__link nav__link--current">Home</span>
             ) : (
               <Link className="nav__link" to={AppRoute.Home}>
@@ -22,7 +23,7 @@ function Header({ currentLink }: HeaderProps): JSX.Element {
             )}
           </li>
           <li className="nav__item">
-            {currentLink === "Characters" ? (
+            {currentPage === Pages.Characters ? (
               <span className="nav__link nav__link--current">Characters</span>
             ) : (
               <Link className="nav__link" to={AppRoute.Characters}>

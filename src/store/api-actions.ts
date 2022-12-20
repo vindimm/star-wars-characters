@@ -3,17 +3,17 @@ import { AxiosInstance } from 'axios';
 
 import { APIRoute } from '../const';
 import { AppDispatch, State } from '../types/state';
-import { Characters } from '../types/character';
-import { loadCharacters } from './catalog-data/catalog-data';
+import { HeroesResponse } from '../types/heroes-response';
+import { loadHeroes } from './catalog-data/catalog-data';
 
-export const fetchCharactersAction = createAsyncThunk<void, undefined, {
+export const fetchHeroesByPageAction = createAsyncThunk<void, number, {
   dispatch: AppDispatch,
   state: State,
   extra: AxiosInstance
 }>(
-  'data/fetchCharacters',
-  async (_arg, {dispatch, extra: api}) => {
-    const {data} = await api.get<Characters>(APIRoute.Characters);
-    dispatch(loadCharacters(data));
+  'data/fetchHeroesByPage',
+  async (page, {dispatch, extra: api}) => {
+    const {data} = await api.get<HeroesResponse>(APIRoute.HeroesByPage.replace(':id', String(page)));
+    dispatch(loadHeroes(data.results));
   },
 );
