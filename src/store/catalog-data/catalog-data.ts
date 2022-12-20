@@ -5,6 +5,7 @@ import { CatalogData } from '../../types/state';
 
 const initialState: CatalogData = {
   heroes: [],
+  heroesCount: 0,
   isDataLoaded: false,
 };
 
@@ -13,7 +14,8 @@ export const catalogData = createSlice({
   initialState,
   reducers: {
     loadHeroes: (state, action) => {
-      state.heroes = action.payload;
+      state.heroes = action.payload.results;
+      state.heroesCount = action.payload.count;
       state.isDataLoaded = true;
     },
   },

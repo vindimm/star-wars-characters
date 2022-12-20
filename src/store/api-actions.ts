@@ -14,6 +14,6 @@ export const fetchHeroesByPageAction = createAsyncThunk<void, number, {
   'data/fetchHeroesByPage',
   async (page, {dispatch, extra: api}) => {
     const {data} = await api.get<HeroesResponse>(APIRoute.HeroesByPage.replace(':id', String(page)));
-    dispatch(loadHeroes(data.results));
+    dispatch(loadHeroes(data));
   },
 );

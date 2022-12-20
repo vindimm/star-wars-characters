@@ -20,3 +20,10 @@ export enum Pages {
   Home = 'home',
   Characters = 'characters',
 }
+
+export enum Genders {
+  Male = 'male',
+  Female = 'female',
+  Hermaphrodite = 'hermaphrodite',
+  NA = 'n/a',
+}

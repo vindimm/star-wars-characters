@@ -1,0 +1,9 @@
+.heroes-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 45px 35px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
