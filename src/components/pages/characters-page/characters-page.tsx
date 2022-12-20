@@ -1,4 +1,4 @@
-import Header from "../../header/header";
+import Header from '../../header/header';
 
 function CharactersPage(): JSX.Element {
   return (
