@@ -17,3 +17,15 @@ export const fetchHeroesByPageAction = createAsyncThunk<void, number, {
     dispatch(loadHeroes(data));
   },
 );
+
+export const fetchHeroesBySearchAction = createAsyncThunk<void, string, {
+  dispatch: AppDispatch,
+  state: State,
+  extra: AxiosInstance
+}>(
+  'data/fetchHeroesBySearch',
+  async (query, {dispatch, extra: api}) => {
+    const {data} = await api.get<HeroesResponse>(APIRoute.HeroesBySearch.replace(':query', query));
+    dispatch(loadHeroes(data));
+  },
+);
