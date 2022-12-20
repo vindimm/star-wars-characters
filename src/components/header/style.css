@@ -1,0 +1,40 @@
+.page-header {
+  padding: 34px 76px;
+  background-color: #1f2a63;
+  font-family: "Karla", "Arial", sans-serif;
+}
+
+.nav__list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.nav__link {
+  padding: 10px;
+  color: #f6f7f9;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: #a8a9a9;
+}
+
+.nav__link:active {
+  color: #787878;
+}
+
+.nav__link--current,
+.nav__link--current:hover,
+.nav__link--current:active {
+  color: #f6f7f9;
+}
