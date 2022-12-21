@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { fetchHeroesByPageAction } from '../../../store/api-actions';
+// import { useEffect } from 'react';
+// import { fetchHeroesByPageAction } from '../../../store/api-actions';
 
-import { useAppDispatch } from '../../../hooks/use-app-dispatch';
+// import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 import { useAppSelector } from '../../../hooks/use-app-selector';
 import { Pages } from '../../../const';
 import { getHeroes, getHeroesCount } from '../../../store/selectors';
@@ -11,13 +11,13 @@ import Search from '../../search/search';
 import './style.css';
 
 function HeroesPage(): JSX.Element {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const heroes = useAppSelector(getHeroes);
   const heroesCount = useAppSelector(getHeroesCount);
 
-  useEffect(() => {
-    dispatch(fetchHeroesByPageAction(1));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchHeroesByPageAction(1));
+  // }, [dispatch]);
 
   return (
     <>

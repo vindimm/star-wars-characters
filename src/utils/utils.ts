@@ -20,3 +20,24 @@ export const getBadgeColor = (gender: string) => {
 
   return result;
 };
+
+// Получение названия иконки в зависимости от пола персонажа
+export const getGenderIcon = (gender: string | undefined) => {
+  let result: string | null = '';
+
+  switch (gender) {
+    case Genders.Male:
+      result = 'male';
+      break;
+    case Genders.Female:
+      result = 'female';
+      break;
+    case Genders.Hermaphrodite:
+      result = 'alien';
+      break;
+    case Genders.NA:
+      result = null;
+  }
+
+  return result;
+};

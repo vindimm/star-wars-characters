@@ -1,6 +1,7 @@
 .heroes__container {
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .heroes__title {

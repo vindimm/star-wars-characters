@@ -1,0 +1,23 @@
+.badges__item {
+  margin-right: 16px;
+  padding: 0 20px;
+  border-radius: 16px;
+  color: #212121;
+  font-family: 'Karla', 'Arial', sans-serif;
+}
+
+.badges__item--green {
+  background-color: #73d677;
+}
+
+.badges__item--purple {
+  background-color: #c956ff;
+}
+
+.badges__item--yellow {
+  background-color: #f5db13;
+}
+
+.badges__item--blue {
+  background-color: #07d6f2;
+}
