@@ -1,4 +1,25 @@
-.main-header {
-  color: skyblue;
+.home {
+  color: #ffffff;
   font-family: "Karla", "Arial", sans-serif;
+  min-height: 100vh;
+  background-image:
+    url("../../../../public/images/banner.png"),
+    linear-gradient(#1f2a63 30%, #17002f 100%);
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.home__title {
+  font-size: 72px;
+  width: 510px;
+}
+
+.home__text {
+  font-size: 32px;
+  width: 510px;
+}
+
+.home__container {
+  width: 1200px;
+  margin: 0 auto;
 }
