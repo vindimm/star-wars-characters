@@ -1,7 +1,6 @@
 import Badges from '../badges/badges';
 import Physical from '../physical/physical';
 import { Hero } from '../../types/hero';
-import { getBadgeColor } from '../../utils/utils';
 import './style.css';
 
 type HeroesListProps = {
@@ -9,8 +8,6 @@ type HeroesListProps = {
 };
 
 function HeroCard({ hero }: HeroesListProps): JSX.Element {
-  const genderColor = getBadgeColor(hero.gender);
-
   return (
     <li className='card' data-url={hero.url}>
       <h3 className='card__title'>{hero.name}</h3>

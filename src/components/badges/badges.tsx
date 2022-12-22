@@ -13,11 +13,15 @@ function Badges({ hero }: BadgesProps): JSX.Element {
     <div className='badges'>
       {
         genderColor && 
-        <span className={`badges__item badges__item--${genderColor}`}>{hero.gender}</span>
+        <span className={`badges__item badges__item--${genderColor}`} data-testid="badge">
+          {hero.gender}
+        </span>
       }
       {
         hero.birth_year !== 'unknown' &&
-        <span className='badges__item badges__item--blue'>{hero.birth_year}</span>
+        <span className='badges__item badges__item--blue' data-testid="badge">
+          {hero.birth_year}
+        </span>
       }
     </div>
   )
