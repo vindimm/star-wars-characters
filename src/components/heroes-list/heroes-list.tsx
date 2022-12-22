@@ -1,8 +1,6 @@
 import { useState, MouseEvent, KeyboardEvent } from 'react';
 
 import { Hero, Heroes } from '../../types/hero';
-import { getHeroByUrl } from '../../store/selectors';
-import { useAppSelector } from '../../hooks/use-app-selector';
 import HeroCard from '../hero-card/hero-card';
 import Modal from '../modal/modal';
 import './style.css';

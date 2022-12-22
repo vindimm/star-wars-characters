@@ -1,13 +1,9 @@
 .heroes-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 45px 35px;
-
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.skyblue {
-  background-color: skyblue;
 }

@@ -1,7 +1,8 @@
 .heroes__container {
+  box-sizing: border-box;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 50px;
+  padding: 40px;
 }
 
 .heroes__title {

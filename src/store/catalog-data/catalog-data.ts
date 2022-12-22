@@ -18,9 +18,19 @@ export const catalogData = createSlice({
       state.heroesCount = action.payload.count;
       state.isDataLoaded = true;
     },
+    resetHeroes: (state) => {
+      state.heroes = [];
+      state.heroesCount = 0;
+      state.isDataLoaded = false;
+    },
+    loadHeroesBySearch: (state, action) => {
+      state.heroes = action.payload;
+    },
   },
 });
 
 export const {
   loadHeroes,
+  resetHeroes,
+  loadHeroesBySearch
 } = catalogData.actions;

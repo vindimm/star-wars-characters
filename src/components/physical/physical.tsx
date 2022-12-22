@@ -14,7 +14,7 @@ function Physical({ hero }: PhysicalProps): JSX.Element {
       </div>
       <div className='physical__item'>
         <dt className='physical__term'>mass</dt>
-        <dd className='physical__desc'>{hero.mass}</dd>
+        <dd className='physical__desc'>{hero.mass === 'unknown' ? 'N/A' : hero.mass}</dd>
       </div>
     </dl>
   )
