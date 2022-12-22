@@ -5,7 +5,7 @@ import { resetHeroes } from '../../../store/catalog-data/catalog-data';
 import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 import { useAppSelector } from '../../../hooks/use-app-selector';
 import { Pages } from '../../../const';
-import { getHeroes, getHeroesCount, getNextQuery } from '../../../store/selectors';
+import { getHeroes, getHeroesCount, getNextQuery, getIsDataLoaded } from '../../../store/selectors';
 import Header from '../../header/header';
 import HeroesList from '../../heroes-list/heroes-list';
 import Search from '../../search/search';
@@ -15,7 +15,8 @@ function HeroesPage(): JSX.Element {
   const dispatch = useAppDispatch();
   const heroes = useAppSelector(getHeroes);
   const heroesCount = useAppSelector(getHeroesCount);
-  const nextQuery = useAppSelector(getNextQuery)
+  const nextQuery = useAppSelector(getNextQuery);
+  const isDataLoaded = useAppSelector(getIsDataLoaded);
 
   const [fetching, setFetching] = useState<boolean>(true);
 
@@ -54,13 +55,10 @@ function HeroesPage(): JSX.Element {
     <div className="heroes">
       <Header currentPage={Pages.Characters} />
       <div className="heroes__container">
-        {heroes.length ?
-          <>
-            <h1 className="heroes__title">{heroesCount} peoples for you to choose your favorite</h1>
-            <Search />
-            <HeroesList heroes={heroes} /> 
-          </> :
-          <h2 className="heroes__loader">Loading...</h2>}
+        <h1 className="heroes__title">{heroesCount} peoples for you to choose your favorite</h1>
+        <Search />
+        {isDataLoaded && <HeroesList heroes={heroes} />}
+        {!isDataLoaded && <h2 className="heroes__loader">Loading...</h2>}
       </div>
     </div>
   );

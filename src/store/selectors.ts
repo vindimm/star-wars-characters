@@ -9,3 +9,5 @@ export const getHeroByUrl = ((url: string | null) => (state: State) =>
   state[NameSpace.CatalogData].heroes.find((hero) => hero.url === url));
 
 export const getNextQuery = ((state: State) => state[NameSpace.CatalogData].nextQuery);
+
+export const getIsDataLoaded = ((state: State) => state[NameSpace.CatalogData].isDataLoaded);

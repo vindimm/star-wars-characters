@@ -30,11 +30,15 @@ export const catalogData = createSlice({
     loadHeroesBySearch: (state, action) => {
       state.heroes = [action.payload.results];
     },
+    resetIsDataLoaded: (state) => {
+      state.isDataLoaded = false;
+    },
   },
 });
 
 export const {
   loadHeroes,
   resetHeroes,
-  loadHeroesBySearch
+  loadHeroesBySearch,
+  resetIsDataLoaded
 } = catalogData.actions;

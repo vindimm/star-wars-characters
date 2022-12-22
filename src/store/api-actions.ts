@@ -4,7 +4,7 @@ import { AxiosInstance } from 'axios';
 import { APIRoute } from '../const';
 import { AppDispatch, State } from '../types/state';
 import { HeroesResponse } from '../types/heroes-response';
-import { loadHeroes, resetHeroes } from './catalog-data/catalog-data';
+import { loadHeroes, resetHeroes, resetIsDataLoaded } from './catalog-data/catalog-data';
 
 export const fetchHeroesAction = createAsyncThunk<void, string, {
   dispatch: AppDispatch,
@@ -25,8 +25,8 @@ export const fetchHeroesBySearchAction = createAsyncThunk<void, string, {
 }>(
   'data/fetchHeroesBySearch',
   async (query, {dispatch, extra: api}) => {
-    const {data} = await api.get<HeroesResponse>(APIRoute.HeroesBySearch.replace(':query', query));
     dispatch(resetHeroes());
+    const {data} = await api.get<HeroesResponse>(APIRoute.HeroesBySearch.replace(':query', query));
     dispatch(loadHeroes(data));
   },
 );
