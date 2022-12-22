@@ -10,7 +10,7 @@ function Physical({ hero }: PhysicalProps): JSX.Element {
     <dl className='physical physical__list'>
       <div className='physical__item'>
         <dt className='physical__term'>height</dt>
-        <dd className='physical__desc'>{hero.height}</dd>
+        <dd className='physical__desc'>{hero.height === 'unknown' ? 'N/A' : hero.height}</dd>
       </div>
       <div className='physical__item'>
         <dt className='physical__term'>mass</dt>

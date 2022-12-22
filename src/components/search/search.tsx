@@ -19,8 +19,9 @@ function Search(): JSX.Element {
   };
 
   useEffect(() => {
-    if (!isInitialRender) {
+    if (isInitialRender) {
       dispatch(resetHeroes);
+    } else {
       dispatch(fetchHeroesBySearchAction(debouncedValue));
     }
   }, [dispatch, debouncedValue]);

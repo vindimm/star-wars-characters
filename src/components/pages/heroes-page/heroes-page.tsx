@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-import { fetchHeroesByPageAction } from '../../../store/api-actions';
+import { fetchHeroesAction } from '../../../store/api-actions';
 import { resetHeroes } from '../../../store/catalog-data/catalog-data';
 import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 import { useAppSelector } from '../../../hooks/use-app-selector';
 import { Pages } from '../../../const';
-import { getHeroes, getHeroesCount } from '../../../store/selectors';
+import { getHeroes, getHeroesCount, getNextQuery } from '../../../store/selectors';
 import Header from '../../header/header';
 import HeroesList from '../../heroes-list/heroes-list';
 import Search from '../../search/search';
@@ -15,28 +15,54 @@ function HeroesPage(): JSX.Element {
   const dispatch = useAppDispatch();
   const heroes = useAppSelector(getHeroes);
   const heroesCount = useAppSelector(getHeroesCount);
+  const nextQuery = useAppSelector(getNextQuery)
+
+  const [fetching, setFetching] = useState<boolean>(true);
+
+  const handleScroll = (event: Event) => {
+    const evt = event.currentTarget as Document;
+    
+    if ((evt.documentElement.scrollHeight - (evt.documentElement.scrollTop + window.innerHeight)) < 100) {
+      setFetching(true);
+    }
+  };
+
+  async function fetchOnePage(query: string | null) {
+    if (query) {
+      await dispatch(fetchHeroesAction(query));
+      setFetching(false);
+    }
+    setFetching(false);
+  }
 
   useEffect(() => {
-    dispatch(fetchHeroesByPageAction(1));
+    if (fetching) {
+      fetchOnePage(nextQuery);
+    }
+  }, [fetching]);
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
 
     return () => {
-      console.log(1234);
-      
       dispatch(resetHeroes());
+      document.removeEventListener('scroll', handleScroll);
     };
-  }, [dispatch]);
+  }, []);
 
   return (
-    <>
+    <div className="heroes">
       <Header currentPage={Pages.Characters} />
-      <div className='heroes__container'>
-        <h1 className='heroes__title'>{heroesCount} peoples for you to choose your favorite</h1>
-        <Search />
+      <div className="heroes__container">
         {heroes.length ?
-          <HeroesList heroes={heroes} /> :
-          <h2>Loading...</h2>}
+          <>
+            <h1 className="heroes__title">{heroesCount} peoples for you to choose your favorite</h1>
+            <Search />
+            <HeroesList heroes={heroes} /> 
+          </> :
+          <h2 className="heroes__loader">Loading...</h2>}
       </div>
-    </>
+    </div>
   );
 }
 

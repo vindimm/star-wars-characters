@@ -8,6 +8,7 @@ export type AppDispatch = typeof store.dispatch;
 export type CatalogData = {
   heroes: Heroes;
   heroesCount: number;
+  nextQuery: string | null;
   isDataLoaded: boolean;
 };
 
