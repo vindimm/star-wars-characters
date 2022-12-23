@@ -24,6 +24,7 @@
 }
 
 .heroes-list__loader {
+  min-height: 256px;
   font-size: 24px;
   color: #444444;
   font-weight: 700;

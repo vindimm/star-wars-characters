@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { fetchHeroesAction } from '../../../store/api-actions';
 import { resetHeroes } from '../../../store/catalog-data/catalog-data';
+import { resetEyeColor } from '../../../store/catalog-filter/catalog-filter';
 import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 import { useAppSelector } from '../../../hooks/use-app-selector';
 import { Pages } from '../../../const';
@@ -49,6 +50,7 @@ function HeroesPage(): JSX.Element {
 
     return () => {
       dispatch(resetHeroes());
+      dispatch(resetEyeColor());
       document.removeEventListener('scroll', handleScroll);
     };
   }, [dispatch]);
