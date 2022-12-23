@@ -12,12 +12,9 @@ export const catalogFilter = createSlice({
   initialState,
   reducers: {
     setEyeColor: (state, action) => {
-      console.log('setColor');
-      
       state.eyeColor = action.payload;
     },
     resetEyeColor: (state) => {
-      console.log('resetColor');
       state.eyeColor = DEFAULT_EYE_COLOR;
     },
   },

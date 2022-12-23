@@ -21,10 +21,8 @@ function Search(): JSX.Element {
 
   useEffect(() => {
     if (!isInitialRender) {
-      console.log(111111);
-      
       dispatch(resetEyeColor());
-      // dispatch(resetHeroes);
+      dispatch(resetHeroes());
       dispatch(fetchHeroesBySearchAction(debouncedValue));
     }
   }, [dispatch, debouncedValue]);

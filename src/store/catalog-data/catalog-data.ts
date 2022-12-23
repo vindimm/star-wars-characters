@@ -9,6 +9,7 @@ const initialState: CatalogData = {
   heroesCount: 0,
   nextQuery: APIRoute.Heroes,
   isDataLoaded: false,
+  isLoading: false,
 };
 
 export const catalogData = createSlice({
@@ -33,6 +34,9 @@ export const catalogData = createSlice({
     resetIsDataLoaded: (state) => {
       state.isDataLoaded = false;
     },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
   },
 });
 
@@ -40,5 +44,6 @@ export const {
   loadHeroes,
   resetHeroes,
   loadHeroesBySearch,
-  resetIsDataLoaded
+  resetIsDataLoaded,
+  setIsLoading
 } = catalogData.actions;

@@ -3,8 +3,29 @@
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 64px;
   padding: 0;
-  padding-bottom: 500px;
   list-style: none;
+  font-family: 'Karla', 'Arial', sans-serif;
+}
+
+.heroes-list__resume {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: #444444;
+  z-index: -1;
+}
+
+.heroes-list__resume--more {
+  min-height: 256px;
+}
+
+.heroes-list__loader {
+  font-size: 24px;
+  color: #444444;
+  font-weight: 700;
+  text-align: center;
 }

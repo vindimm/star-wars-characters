@@ -5,7 +5,7 @@ import { resetHeroes } from '../../../store/catalog-data/catalog-data';
 import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 import { useAppSelector } from '../../../hooks/use-app-selector';
 import { Pages } from '../../../const';
-import { getHeroesCount, getNextQuery, getIsDataLoaded, getHeroesByActiveEyeColor } from '../../../store/selectors';
+import { getHeroesCount, getNextQuery, getIsDataLoaded, getHeroesByActiveEyeColor, getIsLoading } from '../../../store/selectors';
 import Header from '../../header/header';
 import HeroesList from '../../heroes-list/heroes-list';
 import Search from '../../search/search';
@@ -18,6 +18,7 @@ function HeroesPage(): JSX.Element {
   const heroesCount = useAppSelector(getHeroesCount);
   const nextQuery = useAppSelector(getNextQuery);
   const isDataLoaded = useAppSelector(getIsDataLoaded);
+  const isLoading = useAppSelector(getIsLoading);
 
   const [fetching, setFetching] = useState<boolean>(true);
 
@@ -50,7 +51,7 @@ function HeroesPage(): JSX.Element {
       dispatch(resetHeroes());
       document.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="heroes">
@@ -59,7 +60,7 @@ function HeroesPage(): JSX.Element {
         <h1 className="heroes__title">{heroesCount} peoples for you to choose your favorite</h1>
         <Search />
         <Filter />
-        {isDataLoaded && <HeroesList heroes={heroes} />}
+        {isDataLoaded && <HeroesList heroes={heroes} isContentMore={Boolean(nextQuery)} isLoading={isLoading} />}
         {!isDataLoaded && <h2 className="heroes__loader">Loading...</h2>}
       </div>
     </div>

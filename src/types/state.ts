@@ -10,6 +10,7 @@ export type CatalogData = {
   heroesCount: number;
   nextQuery: string | null;
   isDataLoaded: boolean;
+  isLoading: boolean;
 };
 
 export type CatalogFilter = {

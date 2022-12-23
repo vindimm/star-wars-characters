@@ -27,3 +27,5 @@ export const getHeroesByActiveEyeColor = ((state: State) => {
 
   return heroes.filter((hero) => hero.eye_color === eyeColor);
 });
+
+export const getIsLoading = ((state: State) => state[NameSpace.CatalogData].isLoading);
