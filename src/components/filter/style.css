@@ -1,0 +1,21 @@
+.filter {
+  margin-bottom: 36px;
+  font-family: 'Karla', 'Arial', sans-serif;
+}
+
+.filter__title {
+  margin-right: 36px;
+  font-size: 20px;
+}
+
+.filter__select {
+  padding: 0 12px;
+  min-width: 128px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 2px;
+  font-size: 18px;
+  font-family: 'Karla', 'Arial', sans-serif;
+  cursor: pointer;
+  outline: 8px solid #f2f2f2;
+}

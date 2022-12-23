@@ -1,10 +1,10 @@
-import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import { AppRoute } from "../../const";
-import HomePage from "../pages/home-page/home-page";
-import HeroesPage from "../pages/heroes-page/heroes-page";
-import NotFoundPage from "../pages/not-found-page/not-found-page";
+import { AppRoute } from '../../const';
+import HomePage from '../pages/home-page/home-page';
+import HeroesPage from '../pages/heroes-page/heroes-page';
+import NotFoundPage from '../pages/not-found-page/not-found-page';
+import './style.css';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path={AppRoute.Characters} element={<HeroesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

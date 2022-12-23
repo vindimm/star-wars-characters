@@ -2,6 +2,7 @@ import { useState, useEffect, ChangeEvent } from 'react';
 
 import { fetchHeroesBySearchAction } from '../../store/api-actions';
 import { resetHeroes } from '../../store/catalog-data/catalog-data';
+import { resetEyeColor, setEyeColor } from '../../store/catalog-filter/catalog-filter';
 import { useAppDispatch } from '../../hooks/use-app-dispatch';
 import useDebounce from '../../hooks/use-debounce';
 import './style.css';
@@ -20,7 +21,10 @@ function Search(): JSX.Element {
 
   useEffect(() => {
     if (!isInitialRender) {
-      dispatch(resetHeroes);
+      console.log(111111);
+      
+      dispatch(resetEyeColor());
+      // dispatch(resetHeroes);
       dispatch(fetchHeroesBySearchAction(debouncedValue));
     }
   }, [dispatch, debouncedValue]);

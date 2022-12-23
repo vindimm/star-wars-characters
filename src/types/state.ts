@@ -12,6 +12,6 @@ export type CatalogData = {
   isDataLoaded: boolean;
 };
 
-export type CatalogSearch = {
-  heroesBySearch: Heroes;
+export type CatalogFilter = {
+  eyeColor: string;
 };

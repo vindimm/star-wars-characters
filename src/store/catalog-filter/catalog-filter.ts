@@ -1,0 +1,26 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+import { NameSpace, DEFAULT_EYE_COLOR } from '../../const';
+import { CatalogFilter } from '../../types/state';
+
+const initialState: CatalogFilter = {
+  eyeColor: DEFAULT_EYE_COLOR,
+};
+
+export const catalogFilter = createSlice({
+  name: NameSpace.CatalogFilter,
+  initialState,
+  reducers: {
+    setEyeColor: (state, action) => {
+      console.log('setColor');
+      
+      state.eyeColor = action.payload;
+    },
+    resetEyeColor: (state) => {
+      console.log('resetColor');
+      state.eyeColor = DEFAULT_EYE_COLOR;
+    },
+  },
+});
+
+export const { setEyeColor, resetEyeColor } = catalogFilter.actions;

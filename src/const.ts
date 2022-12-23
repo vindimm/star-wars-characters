@@ -1,3 +1,5 @@
+export const DEFAULT_EYE_COLOR = 'All';
+
 export enum AppRoute {
   Home = '/',
   Characters = '/characters',
@@ -6,7 +8,7 @@ export enum AppRoute {
 
 export enum NameSpace {
   CatalogData = 'CATALOG_DATA',
-  CatalogSearch = 'CATALOG_SEARCH',
+  CatalogFilter = 'CATALOG_FILTER',
 }
 
 export enum APIRoute {
