@@ -1,35 +1,33 @@
-# Getting Started with Create React App
+# Описание функционала
+
+Фронтенд приложение для просмотра информации о звездных войнах. Используя [Star Wars API](https://swapi.dev/documentation) происходит получение данных и отрисовка карточек персонажей звездных войн. Есть три страницы - главная, каталог, 404. Функционирует динамическая подгрузка карточек, поиск через запрос на сервер, фильтрация на клиенте. Поиск осуществляется при вводе текста в поле, при этом применяется механизм debounce, чтобы запрос не отправлялся на каждое нажатие. Клик по карточке персонажа открывает модальное окно с подробной информацией. Для компонента карточки написаны тесты.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Использованные технологии
 
-In the project directory, you can run:
+Проект создан с помощью Create React App.
+Использованы TypeScript, React, Redux, Axios, Testing Library.
+
+## Доступные скрипты
+
+Для запуска приложения его необходимо скачать и запустить `npm install`. После установки зависимостей можно использовать следующие команды:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Запуск приложения. Открыть в браузере по адресу [http://localhost:3000](http://localhost:3000).
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Запуск тестов.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Запуск сборки и сохранение оптимизированных и минифицированных файлов в папку `build`.
 
 ### `npm run eject`
+
+Эту команду нельзя отменить. Не запускайте ее, если не понимаете точно, что вы делаете.
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
