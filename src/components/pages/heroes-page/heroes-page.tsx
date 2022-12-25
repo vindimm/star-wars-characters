@@ -5,7 +5,6 @@ import { resetHeroes } from '../../../store/catalog-data/catalog-data';
 import { resetEyeColor } from '../../../store/catalog-filter/catalog-filter';
 import { useAppDispatch } from '../../../hooks/use-app-dispatch';
 import { useAppSelector } from '../../../hooks/use-app-selector';
-import { Pages } from '../../../const';
 import { getHeroesCount, getNextQuery, getIsDataLoaded, getHeroesByActiveEyeColor, getIsLoading } from '../../../store/selectors';
 import Header from '../../header/header';
 import HeroesList from '../../heroes-list/heroes-list';
@@ -57,7 +56,7 @@ function HeroesPage(): JSX.Element {
 
   return (
     <div className="heroes">
-      <Header currentPage={Pages.Characters} />
+      <Header />
       <div className="heroes__container">
         <h1 className="heroes__title">{heroesCount} peoples for you to choose your favorite</h1>
         <Search />
