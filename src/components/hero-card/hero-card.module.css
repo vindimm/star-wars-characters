@@ -9,15 +9,7 @@
   cursor: pointer;
 }
 
-.card--modal {
-  position: absolute;
-
-  width: 796px;
-  height: 370px;
-  border: 5px solid blue;
-}
-
-.card__title {
+.title {
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 24px;

@@ -2,10 +2,10 @@ import { useState, useEffect, ChangeEvent } from 'react';
 
 import { fetchHeroesBySearchAction } from '../../store/api-actions';
 import { resetHeroes } from '../../store/catalog-data/catalog-data';
-import { resetEyeColor, setEyeColor } from '../../store/catalog-filter/catalog-filter';
+import { resetEyeColor } from '../../store/catalog-filter/catalog-filter';
 import { useAppDispatch } from '../../hooks/use-app-dispatch';
 import useDebounce from '../../hooks/use-debounce';
-import './style.css';
+import styles from './search.module.css';
 
 function Search(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ function Search(): JSX.Element {
 
   return (
     <input
-      className="search"
+      className={styles.root}
       type="text"
       placeholder="find..."
       value={value}

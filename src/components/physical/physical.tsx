@@ -1,5 +1,5 @@
 import { Hero } from '../../types/hero';
-import './style.css';
+import styles from './physical.module.css';
 
 type PhysicalProps = {
   hero: Hero;
@@ -7,14 +7,14 @@ type PhysicalProps = {
 
 function Physical({ hero }: PhysicalProps): JSX.Element {
   return (
-    <dl className='physical physical__list'>
-      <div className='physical__item'>
-        <dt className='physical__term'>height</dt>
-        <dd className='physical__desc'>{hero.height === 'unknown' ? 'N/A' : hero.height}</dd>
+    <dl className={styles.list}>
+      <div className={styles.item}>
+        <dt className={styles.term}>height</dt>
+        <dd className={styles.desc}>{hero.height === 'unknown' ? 'N/A' : hero.height}</dd>
       </div>
-      <div className='physical__item'>
-        <dt className='physical__term'>mass</dt>
-        <dd className='physical__desc'>{hero.mass === 'unknown' ? 'N/A' : hero.mass}</dd>
+      <div className={styles.item}>
+        <dt className={styles.term}>mass</dt>
+        <dd className={styles.desc}>{hero.mass === 'unknown' ? 'N/A' : hero.mass}</dd>
       </div>
     </dl>
   )

@@ -1,7 +1,7 @@
 import Badges from '../badges/badges';
 import Physical from '../physical/physical';
 import { Hero } from '../../types/hero';
-import './style.css';
+import styles from './hero-card.module.css';
 
 type HeroesListProps = {
   hero: Hero;
@@ -9,8 +9,8 @@ type HeroesListProps = {
 
 function HeroCard({ hero }: HeroesListProps): JSX.Element {
   return (
-    <li className='card' data-url={hero.url}>
-      <h3 className='card__title'>{hero.name}</h3>
+    <li className={styles.card} data-url={hero.url}>
+      <h3 className={styles.title}>{hero.name}</h3>
       <Physical hero={hero} />
       <Badges hero={hero} />
     </li>

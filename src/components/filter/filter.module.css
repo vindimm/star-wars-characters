@@ -3,12 +3,12 @@
   font-family: 'Karla', 'Arial', sans-serif;
 }
 
-.filter__title {
+.title {
   margin-right: 36px;
   font-size: 20px;
 }
 
-.filter__select {
+.select {
   padding: 0 12px;
   min-width: 128px;
   background-color: #f2f2f2;

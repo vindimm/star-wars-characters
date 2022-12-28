@@ -3,7 +3,7 @@ import { useState, MouseEvent, KeyboardEvent } from 'react';
 import { Hero, Heroes } from '../../types/hero';
 import HeroCard from '../hero-card/hero-card';
 import Modal from '../modal/modal';
-import './style.css';
+import styles from './heroes-list.module.css';
 
 type HeroesListProps = {
   heroes: Heroes;
@@ -19,8 +19,8 @@ function HeroesList({ heroes, isContentMore, isLoading }: HeroesListProps): JSX.
     // Непосредственно элемент на котором произошел клик
     const target = evt.target as HTMLElement;
 
-    // Если среди родителей target есть '.card', то он будет записан в card, иначе card = null
-    const card = target.closest('.card');
+    // Если среди родителей target есть <li> с атрибутом 'data-url', то он будет записан в card, иначе card = null
+    const card = target.closest('li[data-url]');
 
     if (card) {
       setActiveHeroUrl(card.getAttribute('data-url'));
@@ -42,7 +42,7 @@ function HeroesList({ heroes, isContentMore, isLoading }: HeroesListProps): JSX.
 
   return (
     <>
-      <ul className='heroes-list' onClick={handleCardClick}>
+      <ul className={styles.list} onClick={handleCardClick}>
         {heroes.map((hero: Hero) => <HeroCard hero={hero} key={hero.url} />)}
         {isModalOpen && activeHeroUrl &&
           <Modal
@@ -53,12 +53,12 @@ function HeroesList({ heroes, isContentMore, isLoading }: HeroesListProps): JSX.
         }
       </ul>
       {isContentMore && !isLoading &&
-        <p className="heroes-list__resume heroes-list__resume--more">Scroll down to show more...</p>}
+        <p className={`${styles.resume} ${styles.resumeMore}`}>Scroll down to show more...</p>}
 
       {!isContentMore && !isLoading &&
-        <p className="heroes-list__resume heroes-list__resume--end">That`s all!</p>}
+        <p className={styles.resume}>That`s all!</p>}
 
-      {isLoading && <p className="heroes-list__loader">Loading...</p>}
+      {isLoading && <p className={styles.loader}>Loading...</p>}
     </>
   );
 }

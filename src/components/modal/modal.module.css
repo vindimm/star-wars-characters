@@ -1,4 +1,4 @@
-.modal-layout {
+.layout {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   background-color: rgba(33, 33, 33, 0.5);
 }
 
-.modal__container {
+.container {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -24,7 +24,7 @@
   font-family: 'Karla', 'Arial', sans-serif;
 }
 
-.modal__left-wrapper {
+.leftWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -36,11 +36,11 @@
   border-radius: 8px 0 0 8px;
 }
 
-.modal__badges-wrapper {
+.badgesWrapper {
   margin-top: auto;
 }
 
-.modal__right-wrapper {
+.rightWrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,24 +52,24 @@
   background-image: linear-gradient(to bottom, #17002f 42%, #1f2a63 100%);
 }
 
-.modal__title {
+.title {
   margin-top: 0;
   color: #fdfdfd;
   font-size: 36px;
   text-align: center;
 }
 
-.modal__colors-wrapper {
+.colorsWrapper {
   background-color: #f0f0f0;
   border-radius: 8px;
   padding: 16px;
 }
 
-.modal__color {
+.color {
   margin: 0;
 }
 
-.modal__close {
+.close {
   position: absolute;
   top: -50px;
   right: 0;
@@ -82,6 +82,6 @@
   background-image: url("../../../public/images/close-icon.png");
 }
 
-.modal__close:focus {
+.close:focus {
   outline: none;
 }

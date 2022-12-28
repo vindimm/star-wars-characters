@@ -1,8 +1,8 @@
-.heroes {
+.root {
   font-family: 'Karla', 'Arial', sans-serif;
 }
 
-.heroes__container {
+.container {
   box-sizing: border-box;
   max-width: 1200px;
   margin: 0 auto;
@@ -12,11 +12,11 @@
   min-height: 100vh;
 }
 
-.heroes__title {
+.title {
   text-align: center;
 }
 
-.heroes__loader {
+.loader {
   text-align: center;
   margin-top: 128px;
   font-size: 42px;

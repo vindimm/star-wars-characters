@@ -10,7 +10,7 @@ import Header from '../../header/header';
 import HeroesList from '../../heroes-list/heroes-list';
 import Search from '../../search/search';
 import Filter from '../../filter/filter';
-import './style.css';
+import styles from './heroes-page.module.css';
 
 function HeroesPage(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -55,14 +55,14 @@ function HeroesPage(): JSX.Element {
   }, [dispatch]);
 
   return (
-    <div className="heroes">
+    <div className={styles.root}>
       <Header />
-      <div className="heroes__container">
-        <h1 className="heroes__title">{heroesCount} peoples for you to choose your favorite</h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>{heroesCount} peoples for you to choose your favorite</h1>
         <Search />
         <Filter />
         {isDataLoaded && <HeroesList heroes={heroes} isContentMore={Boolean(nextQuery)} isLoading={isLoading} />}
-        {!isDataLoaded && <h2 className="heroes__loader">Loading...</h2>}
+        {!isDataLoaded && <h2 className={styles.loader}>Loading...</h2>}
       </div>
     </div>
   );

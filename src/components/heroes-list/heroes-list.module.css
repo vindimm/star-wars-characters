@@ -1,4 +1,4 @@
-.heroes-list {
+.list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -10,7 +10,7 @@
   font-family: 'Karla', 'Arial', sans-serif;
 }
 
-.heroes-list__resume {
+.resume {
   position: relative;
   font-size: 24px;
   font-weight: 700;
@@ -19,11 +19,11 @@
   z-index: -1;
 }
 
-.heroes-list__resume--more {
+.resumeMore {
   min-height: 256px;
 }
 
-.heroes-list__loader {
+.loader {
   min-height: 256px;
   font-size: 24px;
   color: #444444;

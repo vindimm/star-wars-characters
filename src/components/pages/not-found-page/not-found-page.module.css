@@ -1,4 +1,4 @@
-.not-found {
+.root {
   background-image: url("../../../../public/images/not-found.png");
   background-color: transparent;
   background-repeat: no-repeat;
@@ -7,7 +7,7 @@
   min-height: 100vh;
 }
 
-.not-found__fallback {
+.fallback {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@
   min-height: 100vh;
 }
 
-.not-found__title {
+.title {
   margin: 0;
   font-size: 700px;
   text-align: center;
@@ -26,7 +26,7 @@
   z-index: -1;
 }
 
-.not-found__link {
+.link {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

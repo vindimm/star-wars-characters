@@ -1,11 +1,11 @@
-.physical__list {
+.list {
   display: flex;
   gap: 12px;
   margin-top: 0;
   margin-bottom: 12px;
 }
 
-.physical__item {
+.item {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -19,7 +19,7 @@
   border: 3px solid #212121;
 }
 
-.physical__desc {
+.desc {
   display: flex;
   justify-content: center;
   align-items: center;

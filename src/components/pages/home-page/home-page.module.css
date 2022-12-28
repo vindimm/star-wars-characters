@@ -1,4 +1,4 @@
-.home {
+.root {
   color: #ffffff;
   font-family: "Karla", "Arial", sans-serif;
   min-height: 100vh;
@@ -6,28 +6,28 @@
     url("../../../../public/images/banner.png"),
     linear-gradient(#1f2a63 30%, #17002f 100%);
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: 100% 35%;
 }
 
-.home__title {
+.title {
   font-size: 72px;
   width: 510px;
 }
 
-.home__text {
-  margin-bottom: 128px;
+.text {
+  margin-bottom: 96px;
   font-size: 32px;
   width: 510px;
 }
 
-.home__container {
+.container {
   box-sizing: border-box;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-.home__link {
+.link {
   display: inline-block;
 
   align-self: center;

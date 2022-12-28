@@ -1,25 +1,22 @@
 import { NavLink } from 'react-router-dom';
 
 import { AppRoute } from '../../const';
-import './style.css';
+import styles from './header.module.css';
 
 function Header(): JSX.Element {
-  const commonClassName = "nav__link";
-  const activeClassName = "nav__link--current";
-
   return (
-    <header className="page-header">
-      <div className="page-header__container">
+    <header className={styles.root}>
+      <div className={styles.container}>
         <NavLink to={AppRoute.Home}>
-          <img className='page-header__logo' src={'./images/logo.png'} width="150" height="90" alt="StarWars Logo" />
+          <img className={styles.logo} src={'./images/logo.png'} width="150" height="90" alt="StarWars Logo" />
         </NavLink>
-        <nav className="page-nav nav">
-          <ul className="nav__list">
-            <li className="nav__item">
+        <nav className={styles.nav}>
+          <ul className={styles.navList}>
+            <li className={styles.navItem}>
               <NavLink
                 to={AppRoute.Home}
                 className={({ isActive }) =>
-                  isActive ? `${commonClassName} ${activeClassName}` : commonClassName
+                  isActive ? `${styles.navLink} ${styles.navLinkCurrent}` : styles.navLink
                 }
               >
                 Home
@@ -30,7 +27,7 @@ function Header(): JSX.Element {
               <NavLink
                 to={AppRoute.Characters}
                 className={({ isActive }) =>
-                  isActive ? `${commonClassName} ${activeClassName}` : commonClassName
+                  isActive ? `${styles.navLink} ${styles.navLinkCurrent}` : styles.navLink
                 }
               >
                 Characters

@@ -1,9 +1,9 @@
-.page-header {
+.root {
   background-color: #1f2a63;
   font-family: "Karla", "Arial", sans-serif;
 }
 
-.page-header__container {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,12 +14,12 @@
   padding: 0 40px;
 }
 
-.page-header__logo {
+.logo {
   margin-top: 10px;
   margin-bottom: 4px;
 }
 
-.nav__list {
+.navList {
   display: flex;
 
   margin: 0;
@@ -30,32 +30,32 @@
   line-height: 1.2;
 }
 
-.nav__item:not(:last-child) {
+.navItem:not(:last-child) {
   margin-right: 20px;
 }
 
-.nav__link {
+.navLink {
   position: relative;
   padding: 10px;
   color: #f6f7f9;
   text-decoration: none;
 }
 
-.nav__link:hover {
+.navLink:hover {
   color: #a8a9a9;
 }
 
-.nav__link:active {
+.navLink:active {
   color: #787878;
 }
 
-.nav__link--current,
-.nav__link--current:hover,
-.nav__link--current:active {
+.navLinkCurrent,
+.navLinkCurrent:hover,
+.navLinkCurrent:active {
   color: #f6f7f9;
 }
 
-.nav__link--current::after {
+.navLinkCurrent::after {
   position: absolute;
   bottom: 0;
   height: 3px;
