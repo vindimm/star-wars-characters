@@ -32,6 +32,7 @@ function HeroesPage(): JSX.Element {
 
   async function fetchOnePage(query: string | null) {
     if (query) {
+      dispatch(resetEyeColor());
       await dispatch(fetchHeroesAction(query));
       setFetching(false);
     }

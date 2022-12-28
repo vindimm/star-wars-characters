@@ -1,5 +1,4 @@
 import { Genders } from '../const';
-import { Heroes } from '../types/hero';
 
 // Получение цвета бейджа в карточке в зависимости от пола персонажа
 export const getBadgeColor = (gender: string) => {
