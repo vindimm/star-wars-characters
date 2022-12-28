@@ -1,3 +1,5 @@
+import { MouseEventHandler, KeyboardEventHandler } from 'react';
+
 import { getGenderIcon } from '../../utils/utils';
 import { useAppSelector } from '../../hooks/use-app-selector';
 import { getHeroByUrl } from '../../store/selectors';
@@ -7,16 +9,22 @@ import styles from './modal.module.css';
 
 type ModalProps = {
   url: string;
-  handleClick: () => void;
-  handleKeyDown: any;
+  handleClick: MouseEventHandler;
+  handleKeyDown: KeyboardEventHandler;
 };
 
 function Modal({ url, handleClick, handleKeyDown }: ModalProps): JSX.Element {
   const hero = useAppSelector(getHeroByUrl(url));
   const gender = getGenderIcon(hero?.gender) || null;
 
+  const handleLayoutClick: MouseEventHandler = (evt) => {
+    if (evt.target === document.querySelector('#layout')) {
+      handleClick(evt);
+    }
+  }
+
   return (
-    <div className={styles.layout} tabIndex={0} onKeyDown={handleKeyDown}>
+    <div className={styles.layout} tabIndex={0} onKeyDown={handleKeyDown} onClick={handleLayoutClick} id="layout">
       <div className={styles.container}>
         <div className={styles.leftWrapper}>
           {

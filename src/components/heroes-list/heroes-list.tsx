@@ -14,7 +14,7 @@ type HeroesListProps = {
 function HeroesList({ heroes, isContentMore, isLoading }: HeroesListProps): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [activeHeroUrl, setActiveHeroUrl] = useState<string | null>('');
-  
+
   const handleCardClick = (evt: MouseEvent<HTMLElement>) => {
     // Непосредственно элемент на котором произошел клик
     const target = evt.target as HTMLElement;
